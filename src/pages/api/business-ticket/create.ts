@@ -255,7 +255,9 @@ const handler = async (req: any, res: any) => {
 
       const adminDepartment = departments.find(d => d.name === Department.Admin)
 
-      const notificationMsg = `${req.user.department_name} created a ticket for ${assignee_depart_name} for ${business.business_name} with ${work_status}`
+      const notificationMsg = `${req.user.department_name} created a ticket for ${assignee_depart_name} for ${
+        business ? business.business_name : newBusiness.business_name
+      } with ${work_status}`
 
       // `A recurring ticket has been assigned by ${req.user.department_name}`
 
